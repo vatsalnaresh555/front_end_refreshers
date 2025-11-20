@@ -3,6 +3,8 @@ import Hello from "./Hello.tsx";
 import { Counter } from "./components/Counter.tsx";
 import { NameInput } from "./components/NameInput.tsx";
 import Dashboard from "./components/Dashboard.tsx";
+import { useAuth } from "./context/AuthContext";
+import {Login} from "./components/Login.tsx";
 
 function App() {
   const username = "Sairam";
@@ -20,12 +22,19 @@ function App() {
   // return (<Hello />); 
   */
 
-  return (
+ /* return (
     <div>
      
       <Dashboard username={username} />
     </div>
-  );
+  );*/
+  const { isAuthenticated, loading } = useAuth();
+
+  if (loading) {
+    return <div style={{ padding: 20 }}>Loading user...</div>;
+  }
+
+  return isAuthenticated ? <Dashboard /> : <Login />;
 }
 
 export default App;

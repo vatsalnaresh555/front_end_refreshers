@@ -3,7 +3,16 @@ type InfoProps = {
     username: string;
 }
 
-function Info({ username }: InfoProps) {  
+function Info() {  
+
+    return (
+        <div>
+            
+           <UserNameDisplay  />
+        </div>
+    );
+}
+/*function Info({ username }: InfoProps) {  
 
     return (
         <div>
@@ -11,6 +20,6 @@ function Info({ username }: InfoProps) {
            <UserNameDisplay username={username} />
         </div>
     );
-}
+}*/
   
   export default Info;

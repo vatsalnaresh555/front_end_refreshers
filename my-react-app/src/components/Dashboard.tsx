@@ -5,10 +5,18 @@ type DashboardProps = {
 function Dashboard({ username }: DashboardProps) {
     return (
         <div>
+           
+            <Profile  />
+        </div>
+    );
+}
+/*function Dashboard({ username }: DashboardProps) {
+    return (
+        <div>
             <h2>Dashboard Component</h2>
             <Profile username={username} />
         </div>
     );
-}
+}*/
 
 export default Dashboard;
